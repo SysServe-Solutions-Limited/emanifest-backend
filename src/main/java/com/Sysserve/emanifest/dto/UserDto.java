@@ -1,6 +1,6 @@
 package com.Sysserve.emanifest.dto;
 
-import com.Sysserve.emanifest.model.Role;
+import com.Sysserve.emanifest.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,5 +18,4 @@ public class UserDto {
     private String password;
     private String phoneNo;
     private Role role;
-
 }

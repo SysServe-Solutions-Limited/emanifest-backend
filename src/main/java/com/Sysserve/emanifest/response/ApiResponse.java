@@ -1,7 +1,12 @@
 package com.Sysserve.emanifest.response;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
+@Data
+@NoArgsConstructor
 public class ApiResponse<T> {
     private String message;
     private LocalDateTime timeStamp;
