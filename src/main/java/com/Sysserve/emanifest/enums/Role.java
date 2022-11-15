@@ -1,4 +1,4 @@
-package com.Sysserve.emanifest.model;
+package com.Sysserve.emanifest.enums;
 
 public enum Role {
     ADMIN,

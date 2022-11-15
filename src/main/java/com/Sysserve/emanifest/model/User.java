@@ -1,5 +1,6 @@
 package com.Sysserve.emanifest.model;
 
+import com.Sysserve.emanifest.enums.Role;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,5 +25,7 @@ public class User extends BaseClass implements Serializable {
     private String phoneNo;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @Column(columnDefinition = "boolean default false")
+    private boolean isAccountVerified;
 
 }
