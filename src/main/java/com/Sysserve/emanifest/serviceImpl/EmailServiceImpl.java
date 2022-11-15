@@ -1,6 +1,7 @@
 package com.Sysserve.emanifest.serviceImpl;
 
 import com.Sysserve.emanifest.dto.EmailDetailsRequest;
+import com.Sysserve.emanifest.model.AccountVerificationEmailContext;
 import com.Sysserve.emanifest.service.EmailService;
 import com.Sysserve.emanifest.utils.EmailBody;
 import lombok.RequiredArgsConstructor;
@@ -39,6 +40,22 @@ private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Override
     public String buildVerificationEmail(String name, String link)  {
         return EmailBody.emailVerificationBody(name,link);
+    }
+
+    @Override
+    public String sendSimpleAuthMail(AccountVerificationEmailContext details) {
+        try {
+            SimpleMailMessage mailMessage = new SimpleMailMessage();
+            mailMessage.setFrom(sender);
+            mailMessage.setTo(details.getRecipient());
+            mailMessage.setText(details.getMsgBody());
+            mailMessage.setSubject(details.getSubject());
+
+            javaMailSender.send(mailMessage);
+            return "Mail Sent Successfully";
+        }catch (Exception e){
+            return "Error while sending mail";
+        }
     }
 
 }

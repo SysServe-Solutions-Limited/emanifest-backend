@@ -18,5 +18,9 @@ public class ApiResponse<T> {
         this.timeStamp = LocalDateTime.now();
         this.data = data;
     }
+    public ApiResponse(String message, LocalDateTime timeStamp) {
+        this.message = message;
+        this.timeStamp = timeStamp;
+    }
 
 }
